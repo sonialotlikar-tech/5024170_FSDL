@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fourth — HTML Elements & Attributes</title>
+  
+</head>
+<body>
+  <header>
+    <h1 id="top">HTML Elements & Attributes — Demo</h1>
+    <p id="intro" class="lead" title="Introduction paragraph">This page demonstrates common HTML elements and attributes: links, lists, images, and tables.</p>
+  </header>
+
+  <nav aria-label="Primary">
+    <a href="#lists">Lists</a>
+    <a href="#table">Table</a>
+    <a href="#form">Form</a>
+  </nav>
+
+  <main>
+    <section id="links">
+      <h2>Hyperlinks</h2>
+      <p>External link: <a href="https://example.com" target="_blank" rel="noopener noreferrer" title="Opens example.com">Visit Example.com</a></p>
+      <p>Internal link: <a href="#table">Jump to the table section</a></p>
+    </section>
+
+    <section id="lists">
+      <h2>Lists</h2>
+      <p>Unordered list (bullets):</p>
+      <ul>
+        <li title="First item">First item</li>
+        <li class="highlight">Second item</li>
+        <li>Third item</li>
+      </ul>
+
+      <p>Ordered list (numbered):</p>
+      <ol start="1">
+        <li>First step</li>
+        <li>Second step</li>
+      </ol>
+    </section>
+
+
+
+    <section id="form">
+      <h2>Simple Form (no script)</h2>
+      <form action="#" method="get">
+        <label for="fname">Full name:
+          <input type="text" id="fname" name="fullname" placeholder="Your name" required>
+        </label>
+        <br>
+        <label for="email">Email:
+          <input type="email" id="email" name="email" placeholder="you@example.com">
+        </label>
+        <br>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 — HTML demo. Back to <a href="#top">top</a>.</p>
+    <p>Image example (attributes): <img src="/download.jfif"alt="Placeholder image" width="500" loading="lazy"></p>
+  </footer>
+</body>
+</html>
