@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Third — Basic Demo</title>
+	<style>
+		:root {
+			--primary-color: #0366d6;
+			--secondary-color: #6f42c1;
+			--text-dark: #24292e;
+			--text-light: #586069;
+			--bg-light: #f6f8fa;
+			--bg-white: #ffffff;
+			--border-color: #e1e4e8;
+		}
+
+		html.dark-mode {
+			--text-dark: #e1e4e8;
+			--text-light: #b1bac4;
+			--bg-light: #0d1117;
+			--bg-white: #161b22;
+			--border-color: #30363d;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+			background-color: var(--bg-light);
+			color: var(--text-dark);
+			line-height: 1.6;
+			padding: 20px;
+			transition: background-color 0.3s, color 0.3s;
+		}
+
+		header {
+			margin-bottom: 2rem;
+			padding-bottom: 1rem;
+			border-bottom: 2px solid var(--primary-color);
+		}
+
+		h1 {
+			font-size: 2.5em;
+			color: var(--primary-color);
+			margin-bottom: 0.5rem;
+		}
+
+		h2 {
+			font-size: 1.8em;
+			color: var(--primary-color);
+			border-left: 4px solid var(--secondary-color);
+			padding-left: 1rem;
+			margin: 1.5rem 0 1rem 0;
+		}
+
+		p {
+			color: var(--text-light);
+			margin-bottom: 1rem;
+		}
+
+		nav {
+			background-color: var(--bg-white);
+			padding: 1rem;
+			border-radius: 6px;
+			margin-bottom: 2rem;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		}
+
+		nav a {
+			display: inline-block;
+			color: var(--primary-color);
+			text-decoration: none;
+			margin-right: 1.5rem;
+			font-weight: 600;
+			padding: 0.5rem 1rem;
+			border-radius: 4px;
+			transition: all 0.3s ease;
+		}
+
+		nav a:hover {
+			background-color: var(--bg-light);
+			color: var(--secondary-color);
+		}
+
+		main {
+			max-width: 900px;
+		}
+
+		section {
+			background-color: var(--bg-white);
+			padding: 1.5rem;
+			margin-bottom: 2rem;
+			border-radius: 8px;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		}
+
+		button {
+			background-color: var(--primary-color);
+			color: white;
+			border: none;
+			padding: 0.75rem 1.5rem;
+			font-size: 1rem;
+			font-weight: 600;
+			border-radius: 4px;
+			cursor: pointer;
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+			transition: all 0.3s ease;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		}
+
+		button:hover {
+			background-color: var(--secondary-color);
+			transform: translateY(-2px);
+			box-shadow: 0 4px 12px rgba(3, 102, 214, 0.3);
+		}
+
+		button:active {
+			transform: translateY(0);
+		}
+
+		#time {
+			font-size: 1.1em;
+			color: var(--primary-color);
+			font-weight: 600;
+			margin-bottom: 1.5rem;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+		}
+
+		label {
+			margin-bottom: 1rem;
+			font-weight: 600;
+			color: var(--text-dark);
+		}
+
+		input {
+			padding: 0.75rem;
+			border: 1px solid var(--border-color);
+			border-radius: 4px;
+			font-size: 1rem;
+			margin-bottom: 1rem;
+			transition: border-color 0.3s;
+			background-color: var(--bg-light);
+			color: var(--text-dark);
+		}
+
+		input:focus {
+			outline: none;
+			border-color: var(--primary-color);
+			box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.1);
+		}
+
+		#formMsg {
+			margin-top: 1rem;
+			padding: 1rem;
+			border-radius: 4px;
+			display: none;
+		}
+
+		#formMsg.success {
+			display: block;
+			background-color: #e6f5e6;
+			color: #155724;
+			border: 1px solid #28a745;
+		}
+
+		#formMsg.error {
+			display: block;
+			background-color: #f8d7da;
+			color: #721c24;
+			border: 1px solid #dc3545;
+		}
+
+		footer {
+			margin-top: 3rem;
+			padding-top: 2rem;
+			border-top: 1px solid var(--border-color);
+			text-align: center;
+			color: var(--text-light);
+		}
+
+		@media (max-width: 768px) {
+			h1 {
+				font-size: 2em;
+			}
+
+			h2 {
+				font-size: 1.5em;
+			}
+
+			nav a {
+				display: block;
+				margin-right: 0;
+				margin-bottom: 0.5rem;
+			}
+
+			button {
+				width: 100%;
+				margin-right: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Third — Single File Demo</h1>
+		<p>A compact HTML file showing simple interactivity (time display, theme toggle, form).</p>
+	</header>
+
+	<nav>
+		<a href="first.html">First</a>
+		<a href="second.html">Second</a>
+		<a href="third.html">Third</a>
+	</nav>
+
+	<main>
+		<section aria-labelledby="interactive-heading">
+			<h2 id="interactive-heading">Interactive demo</h2>
+			<p id="time">Current time: —</p>
+			<button id="showTime">Show current time</button>
+			<button id="toggleTheme">Toggle theme</button>
+		</section>
+
+		<section aria-labelledby="form-heading">
+			<h2 id="form-heading">Simple form</h2>
+			<form id="sampleForm">
+				<label>Name: <input id="name" name="name" required></label>
+				<label>Email: <input id="email" name="email" type="email" required></label>
+				<button type="submit">Submit</button>
+			</form>
+			<p id="formMsg" aria-live="polite"></p>
+		</section>
+	</main>
+
+	<footer>
+		<p>© 2026 — Basic HTML demo</p>
+	</footer>
+
+	<script>
+		// Show current time
+		document.getElementById('showTime').addEventListener('click', function(){
+			document.getElementById('time').textContent = 'Current time: ' + new Date().toLocaleString();
+		});
+
+		// Toggle light/dark theme by toggling the class on <html>
+		document.getElementById('toggleTheme').addEventListener('click', function(){
+			document.documentElement.classList.toggle('dark');
+		});
+
+		// Simple form handler
+		document.getElementById('sampleForm').addEventListener('submit', function(e){
+			e.preventDefault();
+			var name = document.getElementById('name').value.trim();
+			if(!name) return;
+			document.getElementById('formMsg').textContent = 'Thanks, ' + name + '! Your form was submitted.';
+			this.reset();
+		});
+	</script>
+</body>
+</html>
+
